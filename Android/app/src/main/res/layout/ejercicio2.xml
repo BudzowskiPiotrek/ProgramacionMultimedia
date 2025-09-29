@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#000000"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="281dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/introduce_un_cateto"
+        android:textColor="#FFFFFF"/>
+
+    <EditText
+        android:id="@+id/edittext_cateto1"
+        android:layout_width="249dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#FFFFFF"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="5dp"
+        android:layout_weight="1"
+        android:text="@string/introduce_el_otro_cateto"
+        android:textColor="#FFFFFF" />
+
+    <EditText
+        android:id="@+id/edittext_cateto2"
+        android:layout_width="248dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#FFFFFF"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/button_pulsa"
+        android:layout_width="249dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/pulsa" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textColor="#FFFFFF"
+        android:text="@string/hipotenusa" />
+
+    <TextView
+        android:id="@+id/textview_resultado"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/_5_0"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+</LinearLayout>
