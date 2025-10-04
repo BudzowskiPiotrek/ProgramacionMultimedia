@@ -21,9 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout columnaBotones;
     private LinearLayout columnaDirecciones;
     private int plantaActual = 0;
-
     private String direccion = "Mismo piso";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +32,9 @@ public class MainActivity extends AppCompatActivity {
         columnaDirecciones = findViewById(R.id.columnaIzquierda);
         // Los componentes
         cantidadPlantas = (EditText) findViewById(EditText1);
-
     }
 
+    // ONCLICK DE BOTON CREAR, RECOGE VALOR DE VIEWTEXT LO PARCEA Y LO MANDA AL METODO CONSTRUIR PLANTAS
     public void crear(View view) {
         try {
             int numero = Integer.parseInt(cantidadPlantas.getText().toString());
@@ -50,17 +48,18 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //BORRA TDO CONTENIDO DE CONTENEDOR IZQUIERDO POSTERIORMENTE CREA X BOTONES
     public void construirPlantas(int numero) {
         columnaBotones.removeAllViews();
-        // Columna de Botones
+        // COLUMNA DE BOTONES IZQUIERDA
         for (int i = numero; i >= 0; i--) {
             Button btn = new Button(this);
             btn.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
             btn.setText(i == 0 ? "Planta Baja" : i + "");
             btn.setTag(i);
-
-            // añadir al cada boton su funcionamiento
             columnaBotones.addView(btn);
+
+            // AÑADE A CADA BOTON SU FUNCIONAMIENTO
             btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -73,25 +72,27 @@ public class MainActivity extends AppCompatActivity {
                         direccion = "Mismo piso";
                     }
                     plantaActual = plantaDeseada;
-                    columnaDirecciones();
+                    columnaDirecciones(); // ACTUALIZAR CAMBIOS EN LADO DERECHO
                 }
             });
         }
-        // Columna de Direcciones
+        // COLUMNA DE DIRECCIONES DERECHA
         columnaDirecciones();
     }
 
+    // BORRA TDO CONTENIDO DE LADO DERECHO, POSTERIORMENTE LO VUELVE A GENERAL
     private void columnaDirecciones() {
         columnaDirecciones.removeAllViews();
         LinearLayout.LayoutParams paramsTxt = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+
         TextView piso = new TextView(this);
         piso.setLayoutParams(paramsTxt);
-        piso.setText("piso " + plantaActual);
+        piso.setText("Piso           :  " + plantaActual);
         columnaDirecciones.addView(piso);
 
         TextView movimiento = new TextView(this);
         movimiento.setLayoutParams(paramsTxt);
-        movimiento.setText("piso " + direccion);
+        movimiento.setText("Direccion  :  " + direccion);
         columnaDirecciones.addView(movimiento);
     }
 }

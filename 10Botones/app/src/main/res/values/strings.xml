@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">10 Botones</string>
+    <string name="app_name">Ascensor</string>
+    <string name="cuantas_plantas">Cuantas Plantas</string>
+    <string name="crear">Crear</string>
 </resources>
