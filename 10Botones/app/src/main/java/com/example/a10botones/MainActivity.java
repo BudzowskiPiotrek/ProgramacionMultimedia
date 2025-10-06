@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
             int numero = Integer.parseInt(cantidadPlantas.getText().toString());
             if (numero > 0 && numero <= 10) {
                 construirPlantas(numero);
+
             } else {
                 Toast.makeText(this, "Error: Introduce un número de 1 a 10.", Toast.LENGTH_LONG).show();
             }
