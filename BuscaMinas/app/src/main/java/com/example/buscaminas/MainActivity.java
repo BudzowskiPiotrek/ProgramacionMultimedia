@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         empezar.setOnClickListener(new CrearOyente(this));
     }
 
-    void crearMinas(int numero) {
+    public void crearMinas(int numero) {
         // CREO BOTONES MINAS Y CUALES SON Y NO MINAS
         inicializarMinas(numero);
         BotonesOyente oyenteBtns = new BotonesOyente(this);
@@ -54,13 +54,22 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void inicializarMinas(int numero) {
+    public void inicializarMinas(int numero) {
         // COMO LA COLECCION SET NO PERMITE REPETIDOS PUES BUCLE WHILE Y HASTA QUE TENGA SIZE/4 PARA PARAR WHILE
         minas = new HashSet<>();
         while (minas.size() != (int) (numero / 4)) {
             int num = (int) (Math.random() * numero);
             minas.add(num);
         }
+    }
+
+    public void resetGame() {
+        // DESAPARECE BOTON DE RESET Y SE BORRA Y CREA DE NUEVO MINAS CON MISMO NUMERO QUE EN PRINCIPIO
+        reset.setVisibility(View.GONE);
+        numAciertos = 0;
+        numFallidos = 0;
+        casillasJuego.removeAllViews();
+        crearMinas(numero);
     }
 
     public void finDelJuego(boolean victoria) {

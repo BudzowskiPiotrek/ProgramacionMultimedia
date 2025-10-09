@@ -11,11 +11,6 @@ public class ResetOyente implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        activity.reset.setVisibility(View.GONE);
-        activity.numAciertos = 0;
-        activity.numFallidos = 0;
-        activity.casillasJuego.removeAllViews();
-        activity.crearMinas(activity.numero);
-
+        activity.resetGame();
     }
 }
