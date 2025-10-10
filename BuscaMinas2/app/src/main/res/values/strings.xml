@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Busca Minas</string>
+    <string name="victoria">¡VICTORIA!</string>
+    <string name="derrota">¡DERROTA!</string>
+    <string name="error1">Error: Introduce un número de 4 a 40.</string>
+    <string name="reset">RESET</string>
+    <string name="jugar">Jugar</string>
+    <string name="elige_un_numro">Elige un numro entre 4 hasta 40</string>
+    <string name="error2">Error: Asegúrate de introducir solo números.</string>
+</resources>
