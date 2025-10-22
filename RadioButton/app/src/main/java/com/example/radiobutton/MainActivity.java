@@ -30,36 +30,71 @@ public class MainActivity extends AppCompatActivity {
         etHotel = (EditText) findViewById(R.id.etHotel);
         etComida = (EditText) findViewById(R.id.etComida);
         etOcio = (EditText) findViewById(R.id.etOcio);
-        
+
         suma = (EditText) findViewById(R.id.suma);
 
         cargarArrays();
-
-        rellenarContenedor();
-
-        //setListeners();
+        rellenarRadioGroup();
+        setListeners();
     }
 
     private void cargarArrays() {
+        // OBTIENE ACESO A LOS RECURSOS
         Resources res = getResources();
+        // RELLENA LOS CONTENEDORES
         opcionesTransporte = res.getStringArray(R.array.Transporte);
         opcionesHotel = res.getStringArray(R.array.Hotel);
         opcionesComida = res.getStringArray(R.array.Comida);
         opcionesOcio = res.getStringArray(R.array.Ocio);
     }
-    private void rellenarContenedor() {
+
+    private void rellenarRadioGroup() {
         rellenarSeccion(opcionesTransporte, rgTransporte);
         rellenarSeccion(opcionesHotel, rgHotel);
         rellenarSeccion(opcionesComida, rgComida);
         rellenarSeccion(opcionesOcio, rgOcio);
     }
+
     private void rellenarSeccion(String[] listaOpciones, RadioGroup rg) {
+        // CREO RADIO BUTTON DENTRO DE RADIOGROUP DESDE LISTA, CONTENEDOR
         for (String opcion : listaOpciones) {
             RadioButton rgBtn = new RadioButton(this);
             rgBtn.setText(opcion);
+            // LE ASIGNO UNA ID A CADA UNO DE LOS CREADOS
             rgBtn.setId(View.generateViewId());
             rg.addView(rgBtn);
         }
     }
 
+    private void setListeners() {
+        // INSTANCIA DEL OYENTE
+        Oyente o = new Oyente(this);
+        // METO AL OYENTE A RADIOGROUP
+        rgTransporte.setOnCheckedChangeListener(o);
+        rgHotel.setOnCheckedChangeListener(o);
+        rgComida.setOnCheckedChangeListener(o);
+        rgOcio.setOnCheckedChangeListener(o);
+
+        // METO AL OYENTE AL EDITTEXT
+        etTrasporte.addTextChangedListener(o);
+        etHotel.addTextChangedListener(o);
+        etComida.addTextChangedListener(o);
+        etOcio.addTextChangedListener(o);
+    }
+
+    public void calcularValores() {
+        double sumaTotal = 0.0;
+
+        sumaTotal += calcular(rgTransporte, etTrasporte);
+        sumaTotal += calcular(rgHotel, etHotel);
+        sumaTotal += calcular(rgComida, etComida);
+        sumaTotal += calcular(rgOcio, etOcio);
+
+        suma.setText(sumaTotal + "");
+
+    }
+
+    private double calcular(RadioGroup rgTransporte, EditText etTrasporte) {
+        return 0;
+    }
 }
