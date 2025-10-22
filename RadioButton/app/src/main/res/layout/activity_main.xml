@@ -5,115 +5,149 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="8dp"
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:layout_width="105dp"
-        android:layout_height="146dp"
+        android:id="@+id/llTransporte"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        android:padding="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/llHotel"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Trasporte" />
+            android:text="Transporte" />
 
-        <RadioButton
-            android:id="@+id/rbTransporte"
+        <RadioGroup
+            android:id="@+id/rgTransporte"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/etTrasporte"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Personas"
+            android:inputType="number"
             android:text="0" />
-
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="105dp"
-        android:layout_height="146dp"
+        android:id="@+id/llHotel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="106dp"
-        tools:layout_editor_absoluteY="1dp">
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/llTransporte"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Hotel" />
 
-        <RadioButton
-            android:id="@+id/rbHotel"
+        <RadioGroup
+            android:id="@+id/rgHotel"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/etHotel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Personas"
+            android:inputType="number"
             android:text="0" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="105dp"
-        android:layout_height="146dp"
+        android:id="@+id/llComida"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="147dp">
+        android:padding="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/llOcio"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llTransporte">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Comida" />
 
-        <RadioButton
-            android:id="@+id/rbComida"
+        <RadioGroup
+            android:id="@+id/rgComida"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/etComida"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Personas"
+            android:inputType="number"
             android:text="0" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="105dp"
-        android:layout_height="146dp"
+        android:id="@+id/llOcio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="106dp"
-        tools:layout_editor_absoluteY="147dp">
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/llComida"
+        app:layout_constraintTop_toBottomOf="@+id/llHotel">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Ocio" />
 
-        <RadioButton
-            android:id="@+id/rbOcio"
+        <RadioGroup
+            android:id="@+id/rgOcio"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/etOcio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Personas"
+            android:inputType="number"
             android:text="0" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="210dp"
-        android:layout_height="18dp"
-        android:orientation="horizontal"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="294dp">
+    <TextView
+        android:id="@+id/tvSumaLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Total a Pagar:"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/etSuma"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llComida" />
 
-    </LinearLayout>
+    <EditText
+        android:id="@+id/suma"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSumaLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.3" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

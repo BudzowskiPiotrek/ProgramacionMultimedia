@@ -5,26 +5,22 @@
         <item>Comida</item>
         <item>Ocio</item>
     </string-array>
-
     <string-array name="Transporte">
         <item>Autobus - 100</item>
         <item>Avion - 800</item>
         <item>Tren - 150</item>
         <item>Propio - 50</item>
     </string-array>
-
     <string-array name="Hotel">
         <item>Ibis - 500</item>
         <item>Hilton - 300</item>
         <item>Malaga Palacion - 200</item>
     </string-array>
-
     <string-array name="Comida">
         <item>Completa - 200</item>
         <item>Media - 100</item>
         <item>Desayuno - 50</item>
     </string-array>
-
     <string-array name="Ocio">
         <item>Cultural - 200</item>
         <item>Fiestas - 100</item>
