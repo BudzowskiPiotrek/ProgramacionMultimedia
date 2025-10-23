@@ -23,11 +23,11 @@ public class VerMinaOyente implements View.OnClickListener {
                 if (child instanceof Button) {
                     if (activity.minas.contains(child.getTag())) {
                         if (verMinas&& contador<1) {
-                            child.setBackgroundColor(Color.parseColor("#FF0000"));
+                            ((Button) child).setText("Bomba");
                             contador++;
                             break;
                         } else {
-                            child.setBackgroundColor(Color.parseColor("#EEEEEE"));
+                            ((Button) child).setText("");
                             break;
                         }
 

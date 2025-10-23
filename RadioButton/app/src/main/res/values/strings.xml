@@ -26,4 +26,10 @@
         <item>Fiestas - 100</item>
         <item>Libro - 50</item>
     </string-array>
+    <string name="calculadoraviaje">CalculadoraViaje</string>
+    <string name="personas">Personas</string>
+    <string name="hotel">Hotel</string>
+    <string name="ocio">Ocio</string>
+    <string name="total_a_pagar">Total a Pagar:</string>
+    <string name="transporte">Transporte</string>
 </resources>

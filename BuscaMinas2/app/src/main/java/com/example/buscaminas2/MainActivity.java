@@ -10,11 +10,7 @@ import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -24,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     public LinearLayout menu;
     public GridLayout casillasJuego;
     public EditText cantidad;
-    public Button  reset;
+    public Button reset;
     public Set<Integer> minas;
     public int numFallidos, numAciertos, numero;
 
@@ -34,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
         menu = findViewById(R.id.layout_menu);

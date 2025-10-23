@@ -7,9 +7,12 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * @author CRISTOBAL PRIMERO DE SU NOMBRE
+ * @version 1.0
+ */
 
 public class MainActivity extends AppCompatActivity {
     public RadioGroup rgTransporte, rgHotel, rgComida, rgOcio;
@@ -19,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         rgTransporte = (RadioGroup) findViewById(R.id.rgTransporte);
         rgHotel = (RadioGroup) findViewById(R.id.rgHotel);
@@ -83,18 +85,51 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void calcularValores() {
+        // RESETEO DE SUMA AL 0.0
         double sumaTotal = 0.0;
-
+        // VAMOS A SUMAR LAS 4 GRUPOS CADA UNO POR SEPARADO
         sumaTotal += calcular(rgTransporte, etTrasporte);
         sumaTotal += calcular(rgHotel, etHotel);
         sumaTotal += calcular(rgComida, etComida);
         sumaTotal += calcular(rgOcio, etOcio);
-
+        // CAMBIAMOS TOTAL DE SUMA EN EDIT TEXT SUMA
         suma.setText(sumaTotal + "");
 
     }
 
-    private double calcular(RadioGroup rgTransporte, EditText etTrasporte) {
-        return 0;
+    private double calcular(RadioGroup rg, EditText et) {
+        // EXTRAEMOS LA ID DE RADIO QUE ESTE PULSADA
+        int selectedId = rg.getCheckedRadioButtonId();
+        // SI NO ESTA SELECCIONADO 0* LO QUE SEA ES 0
+        if (selectedId == -1) {
+            return 0.0;
+        }
+        RadioButton selecionado = findViewById(selectedId);
+        String textoRadio = selecionado.getText().toString();
+        // SEPARARLO TEXTO DE NUMERO
+        double precio = sacarPrecio(textoRadio);
+
+        String textoCuantos = et.getText().toString();
+        int numero = 0;
+        try {
+            if (!textoCuantos.isEmpty()) {
+                numero = Integer.parseInt(textoCuantos);
+            }
+        } catch (NumberFormatException e) {
+            // POR SI NO METE NUMERO
+        }
+        return precio * numero;
+    }
+
+    private double sacarPrecio(String texto) {
+        try {
+            int posicion = texto.lastIndexOf('-');
+            if (posicion != -1) {
+                String precio = texto.substring(posicion + 1).trim();
+                return Double.parseDouble(precio);
+            }
+        } catch (Exception e) {
+        }
+        return 0.0;
     }
 }
