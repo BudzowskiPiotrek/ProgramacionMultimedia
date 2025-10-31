@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CHECKPRACTICA.kt</string>
+    <string-array name="listaopciones">
+        <item>futbol</item>
+        <item>basket</item>
+        <item>tenis</item>
+        <item>voley</item>
+    </string-array>
+</resources>
