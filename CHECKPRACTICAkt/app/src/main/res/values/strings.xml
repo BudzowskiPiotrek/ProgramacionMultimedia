@@ -6,4 +6,8 @@
         <item>tenis</item>
         <item>voley</item>
     </string-array>
+    <string-array name="listamujer">
+        <item>Balet</item>
+        <item>Super Balet</item>
+    </string-array>
 </resources>
