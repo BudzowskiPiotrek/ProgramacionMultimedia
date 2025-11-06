@@ -14,22 +14,15 @@ class OyenteRadio(private val activity: MainActivity) :
         val selecionado: RadioButton? = activity.findViewById(checkedId)
         if (selecionado != null) {
             val texto = selecionado.text
+
+
             if (texto.toString().equals("hombre", ignoreCase = true)) {
-                borrar()
+                activity.limpiarContenedor()
+                activity.rellenarCheck(activity.opciones)
             } else {
                 activity.rellenarCheck(activity.opciones2)
             }
         }
     }
 
-    private fun borrar() {
-        for (i in 1..activity . contenedor . getChildCount ()) {
-            val child: View? = activity.contenedor.getChildAt(i)
-            if (child is RadioButton) {
-                if(child.text.toString().equals("Balet")||child.text.toString().equals("Super Balet")){
-                    activity.contenedor.removeView(child)
-                }
-            }
-        }
-    }
 }

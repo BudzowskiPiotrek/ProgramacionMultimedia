@@ -40,6 +40,9 @@ class MainActivity : AppCompatActivity() {
         val oyente = OyenteRadio(this)
         rq!!.setOnCheckedChangeListener(oyente)
     }
+    public fun limpiarContenedor() {
+        contenedor.removeAllViews()
+    }
 
     public fun rellenarCheck(opciones: Array<String?>) {
         val oyente = Oyente(this)

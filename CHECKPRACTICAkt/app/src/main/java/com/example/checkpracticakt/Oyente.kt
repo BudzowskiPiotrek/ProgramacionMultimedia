@@ -9,12 +9,17 @@ import android.widget.TextView
  */
 class Oyente(private val activity: MainActivity) : CompoundButton.OnCheckedChangeListener {
     override fun onCheckedChanged(buttonView: CompoundButton, isChecked: Boolean) {
-        val cambio: Int = if (isChecked) {
-            1
-        } else {
-            -1
+        if(activity.suma?.text.toString().toInt() >=4 ){
+            buttonView.setChecked(false)
+        }else{
+            val cambio: Int = if (isChecked) {
+                1
+            } else {
+                -1
+            }
+            actualizarContador(cambio)
         }
-        actualizarContador(cambio)
+
     }
 
     private fun actualizarContador(cambio: Int) {
