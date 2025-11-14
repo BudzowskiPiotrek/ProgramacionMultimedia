@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     public RadioGroup rg;
     public TextView resultado;
     public Button extraer;
+    public int suma =0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +48,14 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, opciones2);
         sEuros.setAdapter(adapter2);
         sCentimos.setAdapter(adapter);
-        oyenteBoton();
+        // oyenteBoton();
+        oyenteSpinner();
+    }
 
+    private void oyenteSpinner() {
+        OyenteSpiner listen = new OyenteSpiner(this);
+        sEuros.setOnItemSelectedListener(listen);
+        sCentimos.setOnItemSelectedListener(listen);
     }
 
     private void oyenteBoton() {

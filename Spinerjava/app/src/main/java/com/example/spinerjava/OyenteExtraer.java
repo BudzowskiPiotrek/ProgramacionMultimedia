@@ -1,5 +1,6 @@
 package com.example.spinerjava;
 
+
 import android.view.View;
 
 /**
@@ -8,10 +9,9 @@ import android.view.View;
  */
 public class OyenteExtraer implements View.OnClickListener {
     private final MainActivity activity;
-
-    private static final int PRECIO_A = 80;
-    private static final int PRECIO_B = 120;
-    private static final int PRECIO_C = 310;
+    public int precio_a;
+    public int precio_b;
+    public int precio_c;
 
     public OyenteExtraer(MainActivity activity) {
         this.activity = activity;
@@ -19,28 +19,25 @@ public class OyenteExtraer implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        int eurosIngresados = Integer.parseInt(activity.sEuros.getSelectedItem().toString());
-        int centimosIngresados = Integer.parseInt(activity.sCentimos.getSelectedItem().toString());
-
-        int total = (eurosIngresados * 100) + centimosIngresados;
+        precio_a = Integer.parseInt(activity.getString(R.string.precio_a));
+        precio_b = Integer.parseInt(activity.getString(R.string.precio_b));
+        precio_c = Integer.parseInt(activity.getString(R.string.precio_c));
 
         int idSeleccionado = activity.rg.getCheckedRadioButtonId();
 
         int precioBebida = 0;
         if (idSeleccionado == R.id.radio1) {
-            precioBebida = PRECIO_A;
+            precioBebida = precio_a;
         } else if (idSeleccionado == R.id.radio2) {
-            precioBebida = PRECIO_B;
+            precioBebida = precio_b;
         } else if (idSeleccionado == R.id.radio3) {
-            precioBebida = PRECIO_C;
+            precioBebida = precio_c;
         } else {
             precioBebida = 0;
         }
-        if (total >= precioBebida) {
-            int cambio = total - precioBebida;
-            activity.resultado.setText(activity.getString(R.string.resultado_correcto_toma_tu_cambio_en_centimos_es) + cambio);
-        } else {
-            activity.resultado.setText(R.string.resultado_incorrecto2);
+        if (activity.suma >= precioBebida) {
+            activity.suma -= precioBebida;
+            activity.resultado.setText(activity.getString(R.string.resultado) + activity.suma);
         }
     }
 }

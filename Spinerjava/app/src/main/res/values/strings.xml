@@ -1,10 +1,12 @@
 <resources>
     <string name="app_name">Spiner Java</string>
-    <string name="bebida_a_0_euros_80_centimos">Bebida A (0 euros 80 centimos)</string>
-    <string name="bebida_b_1_euros_20_centimos">Bebida B (1 euros 20 centimos)</string>
+    <string name="precio_a">120</string>
+    <string name="precio_b">280</string>
+    <string name="precio_c">310</string>
+    <string name="bebida_a_0_euros_80_centimos">Bebida A (1 euros 20 centimos)</string>
+    <string name="bebida_b_1_euros_20_centimos">Bebida B (2 euros 80 centimos)</string>
     <string name="bebida_c_3_euros_10_centimos">Bebida C (3 euros 10 centimos)</string>
     <string name="extraer_bebida">EXTRAER BEBIDA</string>
-    <string name="resultado_incorrecto">Resultado: Incorrecto</string>
-    <string name="resultado_incorrecto2">Resultado: Incorrecto</string>
-    <string name="resultado_correcto_toma_tu_cambio_en_centimos_es">"Resultado: Correcto, toma tu cambio en centimos es: "</string>
+    <string name="resultado">"Resultado: "</string>
+    <string name="resultado2">Resultado :</string>
 </resources>
